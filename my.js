@@ -18,25 +18,51 @@ function addNew() {
 
 // REMOVE STUDENT
 
-}
 // Create a function called remove that takes in a name
 // Finds its index location, then removes that name from the roster
-function remover() {
-  var remName = prompt("What name you would like to remove?")
-  var index = roster.indexOf(remName,1);
+// function remove() {
+//   var remName = prompt("What name you would like to remove?")
+//   var index = roster.indexOf(remName);
+//   roster.splice(index,1)
+// }
+
+function remove(){
+  var remName = prompt("What name would you like to remove?");
+  var index = roster.indexOf(remName);
+  roster.splice(index,1)
+}
 
 // HINT: http://stackoverflow.com/questions/5767325/how-to-remove-a-particular-element-from-an-array-in-javascript
 //
 
 // DISPLAY ROSTER
-function display(){
-  alert(roster[:])
-}
 
 // Create a function called display that prints out the orster to the console.
 
+function display(){
+  alert(roster);
+}
 
 // Start by asking if they want to use the web app
+// alert("hello!!!")
+var start = prompt("Would you like to use the Roster app? y/n")
+var action = "empty"
 
 // Now create a while loop that keeps asking for an action (add,remove, display or quit)
+if (start === "y") {
+  while (action !== "quit") {
+    action = prompt("What do like to do? Chose an action: add, remove, display, quit")
+    if (action === "add") {
+      addNew();
+    }else if (action === "display") {
+      display();
+    }else if (action === "remove") {
+      remove();
+  }
+ }
+}
+alert("Thanks for using the Web App! Please refresh the page to start over.")
+
+
+
 // Use if and else if statements to execute the correct function for each command.
